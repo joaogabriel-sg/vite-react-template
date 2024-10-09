@@ -1,0 +1,45 @@
+name: PULL REQUEST
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚨 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🧩 Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: 🐢 Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm"
+
+      - name: 📦 Install dependencies
+        run: pnpm install
+
+      - name: 🚧 Run type check
+        run: pnpm typeCheck
+
+      - name: 🧹 Run lint
+        run: pnpm lint
+
+      - name: 🧪 Run unit tests
+        run: pnpm test:unit
+
+      - name: 📦 Install e2e dependencies
+        run: pnpm exec playwright install --with-deps
+
+      - name: 🧬 Run e2e tests
+        run: pnpm exec playwright test

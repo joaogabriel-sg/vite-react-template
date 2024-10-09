@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  commands:
+    "checking types":
+      run: pnpm typeCheck
+    "checking lint":
+      run: pnpm lint
+
+commit-msg:
+  commands:
+    "lint commit message":
+      run: pnpm commitlint --edit {1}
+
+pre-push:
+  commands:
+    "run tests":
+      run: pnpm test:unit
