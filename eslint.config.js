@@ -5,7 +5,6 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import perfectionist from "eslint-plugin-perfectionist";
 import unicorn from "eslint-plugin-unicorn";
-import tailwind from "eslint-plugin-tailwindcss";
 import tseslint from "typescript-eslint";
 import vitest from "@vitest/eslint-plugin";
 import pluginQuery from "@tanstack/eslint-plugin-query";
@@ -23,14 +22,12 @@ export default tseslint.config(
       "react-hooks": reactHooks,
       "react-refresh": reactRefresh,
       unicorn,
-      tailwindcss: tailwind,
       "@tanstack/query": pluginQuery,
       perfectionist,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
       ...unicorn.configs.recommended.rules,
-      ...tailwind.configs.recommended.rules,
       ...pluginQuery.configs.recommended.rules,
       ...perfectionist.configs["recommended-natural"].rules,
       "react-refresh/only-export-components": [
