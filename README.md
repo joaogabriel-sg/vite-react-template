@@ -1,50 +1,79 @@
-# React + TypeScript + Vite
+# Vite React Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A ready-to-use template to bootstrap React projects with Vite, React and TypeScript — optimized for speed, dev experience, and scalability.
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Download and Install
 
-## Expanding the ESLint configuration
+Use `degit` to scaffold a new project based on this template:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+npx degit https://github.com/joaogabriel-sg/vite-react-template#main my-app
+cd my-app
+pnpm install
+pnpm setup:project
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Run the app
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+To start the development server, run:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+pnpm dev
+```
+
+The app will be available at [http://localhost:5173](http://localhost:5173) by default.
+
+## What's included
+
+This template comes pre-configured with:
+
+- ⚡️ Vite — build tool and dev server
+- ⚛️ React — UI library
+- 🧠 TypeScript — static typing
+- 🎨 Tailwind CSS — utility-first CSS framework
+- 🧹 ESLint — code linting
+- ✨ Prettier — code formatting
+- 🧪 Vitest — unit testing
+- 🧭 Playwright — end-to-end testing
+- 🪝 Lefthook — git hooks
+- 🔎 Path mapping — use "@/..." instead of relative paths
+- ✅ PR workflow — lint, type check, and unit tests before merging
+
+## Available scripts
+
+- `pnpm setup:project` — install deps and enable git hooks
+- `pnpm dev` — start development server
+- `pnpm build` — type-check and create production build
+- `pnpm preview` — preview production build
+- `pnpm lint` — run ESLint
+- `pnpm lint:fix` — fix lint issues
+- `pnpm typeCheck` — run TypeScript type checks
+- `pnpm test:unit` — run unit tests (Vitest)
+- `pnpm test:unit:watch` — run unit tests in watch mode
+- `pnpm test:unit:coverage` — run unit tests with coverage
+- `pnpm test:unit:coverage:watch` — watch mode + coverage
+- `pnpm test:e2e` — run e2e tests (Playwright)
+- `pnpm test:e2e:ui` — run e2e tests with UI
+- `pnpm test:e2e:report` — show Playwright HTML report
+
+## Path Mapping (Alias)
+
+To improve DX and avoid long relative imports like `../../../components`, this project uses a path alias:
+
+- `@/` points to the `src/` directory.
+  You can use it in your imports like this:
+
+```ts
+import { Button } from "@/components/Button";
+```
+
+The alias is configured in:
+
+- `tsconfig.json` — for TypeScript support
+- `vite.config.ts` — for Vite resolution
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more information.
