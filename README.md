@@ -33,11 +33,13 @@ This template comes pre-configured with:
 - ⚛️ React — UI library
 - 🧠 TypeScript — static typing
 - 🎨 Tailwind CSS — utility-first CSS framework
+- 📦 Tanstack Query — data fetching and caching
 - 🧹 ESLint — code linting
 - ✨ Prettier — code formatting
 - 🧪 Vitest — unit testing
 - 🧭 Playwright — end-to-end testing
 - 🪝 Lefthook — git hooks
+- 🛡️ MSW - intercept and mock API requests for tests and development
 - 🔎 Path mapping — use "~/..." instead of relative paths
 - ✅ PR workflow — lint, type check, and unit tests before merging
 
