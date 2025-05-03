@@ -74,6 +74,17 @@ The alias is configured in:
 - `tsconfig.json` — for TypeScript support
 - `vite.config.ts` — for Vite resolution
 
+## Switch to npm/yarn
+
+This starter uses pnpm by default, but this choice is yours. If you'd like to switch to npm/yarn, follow these steps:
+
+- Delete the `pnpm-lock.yaml` file.
+- Install the dependencies with npm/yarn.
+- Update the `package.json` scripts to use npm/yarn commands instead of pnpm.
+- Update the CI workflow and Lefthook Git hooks to use npm/yarn commands.
+
+Remember to follow the project structure and ensure all scripts and configurations are updated accordingly.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for more information.
