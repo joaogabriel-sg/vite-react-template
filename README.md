@@ -33,12 +33,14 @@ This template comes pre-configured with:
 - ⚛️ React — UI library
 - 🧠 TypeScript — static typing
 - 🎨 Tailwind CSS — utility-first CSS framework
+- 📦 Tanstack Query — data fetching and caching
 - 🧹 ESLint — code linting
 - ✨ Prettier — code formatting
 - 🧪 Vitest — unit testing
 - 🧭 Playwright — end-to-end testing
 - 🪝 Lefthook — git hooks
-- 🔎 Path mapping — use "@/..." instead of relative paths
+- 🛡️ MSW - intercept and mock API requests for tests and development
+- 🔎 Path mapping — use "~/..." instead of relative paths
 - ✅ PR workflow — lint, type check, and unit tests before merging
 
 ## Available scripts
@@ -57,6 +59,7 @@ This template comes pre-configured with:
 - `pnpm test:e2e` — run e2e tests (Playwright)
 - `pnpm test:e2e:ui` — run e2e tests with UI
 - `pnpm test:e2e:report` — show Playwright HTML report
+- `preinstall` - prevent installing with npm or yarn, use pnpm instead
 
 ## Path Mapping (Alias)
 
@@ -73,6 +76,17 @@ The alias is configured in:
 
 - `tsconfig.json` — for TypeScript support
 - `vite.config.ts` — for Vite resolution
+
+## Switch to npm/yarn
+
+This starter uses pnpm by default, but this choice is yours. If you'd like to switch to npm/yarn, follow these steps:
+
+- Delete the `pnpm-lock.yaml` file.
+- Install the dependencies with npm/yarn.
+- Update the `package.json` scripts to use npm/yarn commands instead of pnpm.
+- Update the CI workflow and Lefthook Git hooks to use npm/yarn commands.
+
+Remember to follow the project structure and ensure all scripts and configurations are updated accordingly.
 
 ## License
 
