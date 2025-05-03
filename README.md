@@ -38,7 +38,7 @@ This template comes pre-configured with:
 - 🧪 Vitest — unit testing
 - 🧭 Playwright — end-to-end testing
 - 🪝 Lefthook — git hooks
-- 🔎 Path mapping — use "@/..." instead of relative paths
+- 🔎 Path mapping — use "~/..." instead of relative paths
 - ✅ PR workflow — lint, type check, and unit tests before merging
 
 ## Available scripts
