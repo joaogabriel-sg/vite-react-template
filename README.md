@@ -62,11 +62,11 @@ This template comes pre-configured with:
 
 To improve DX and avoid long relative imports like `../../../components`, this project uses a path alias:
 
-- `@/` points to the `src/` directory.
+- `~/` points to the `src/` directory.
   You can use it in your imports like this:
 
 ```ts
-import { Button } from "@/components/Button";
+import { Button } from "~/components/Button";
 ```
 
 The alias is configured in:
