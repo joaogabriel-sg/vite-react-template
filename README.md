@@ -57,6 +57,7 @@ This template comes pre-configured with:
 - `pnpm test:e2e` — run e2e tests (Playwright)
 - `pnpm test:e2e:ui` — run e2e tests with UI
 - `pnpm test:e2e:report` — show Playwright HTML report
+- `preinstall` - prevent installing with npm or yarn, use pnpm instead
 
 ## Path Mapping (Alias)
 
