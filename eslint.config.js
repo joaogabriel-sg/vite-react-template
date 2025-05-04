@@ -9,6 +9,7 @@ import tseslint from "typescript-eslint";
 import vitest from "@vitest/eslint-plugin";
 import pluginQuery from "@tanstack/eslint-plugin-query";
 import i18next from "eslint-plugin-i18next";
+import jsxA11y from "eslint-plugin-jsx-a11y";
 
 export default tseslint.config(
   { ignores: ["dist"] },
@@ -26,6 +27,7 @@ export default tseslint.config(
       "@tanstack/query": pluginQuery,
       perfectionist,
       i18next,
+      "jsx-a11y": jsxA11y,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -33,6 +35,7 @@ export default tseslint.config(
       ...pluginQuery.configs.recommended.rules,
       ...perfectionist.configs["recommended-natural"].rules,
       ...i18next.configs["flat/recommended"].rules,
+      ...jsxA11y.configs.recommended.rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
