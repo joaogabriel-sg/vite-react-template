@@ -8,6 +8,7 @@ import unicorn from "eslint-plugin-unicorn";
 import tseslint from "typescript-eslint";
 import vitest from "@vitest/eslint-plugin";
 import pluginQuery from "@tanstack/eslint-plugin-query";
+import i18next from "eslint-plugin-i18next";
 
 export default tseslint.config(
   { ignores: ["dist"] },
@@ -24,12 +25,14 @@ export default tseslint.config(
       unicorn,
       "@tanstack/query": pluginQuery,
       perfectionist,
+      i18next,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
       ...unicorn.configs.recommended.rules,
       ...pluginQuery.configs.recommended.rules,
       ...perfectionist.configs["recommended-natural"].rules,
+      ...i18next.configs["flat/recommended"].rules,
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
