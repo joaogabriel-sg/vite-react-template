@@ -37,6 +37,7 @@ This template comes pre-configured with:
 - 🧹 ESLint — code linting
 - ✨ Prettier — code formatting
 - 🧪 Vitest — unit testing
+- 🧫 Testing Library — testing React components
 - 🧭 Playwright — end-to-end testing
 - 🪝 Lefthook — git hooks
 - 🛡️ MSW - intercept and mock API requests for tests and development
